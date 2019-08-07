@@ -16,7 +16,14 @@
 
 ### JSTL
 
-#### 
+#### JSTL fn(function)
+- 문자열을 처리하는 함수를 제공한다. (컬렉션과 String형)
+
+```swift
+taglib을 사전에 정의해 둔다.
+
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+```
 
 ```swift
 
@@ -40,10 +47,14 @@ fn:endsWith(string, suffix)
 fn:escapeXml(string)
 => string에 XML과 HTML에서 < >& ' " 문자들이 있으면, XML엔티티 코드로 바꿔준뒤 문자열 반환
 => XML() 태그의 문자를 무시한다.
+${fn:escapeXml("<title>나는 "simpolor" 이다.</title>")}
+// 결과 값 : &lt;title&gt;나는 &#034;simpolor&#034; 이다.&lt;/title&gt;
+
+
 
 fn:indexOf(string, sbustring)
-
 => string에서 substring이 처음으로 나타나는 인덱스 반환
+${fn:indexOf("simpolor", p)} // 결과값 : 3
 
 fn:split(string, separator)
 
